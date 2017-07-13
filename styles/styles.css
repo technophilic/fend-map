@@ -15,15 +15,15 @@
 nav {
     position: absolute;
     top: 0;
-    z-index: 999;
+    z-index:999;
     box-shadow: none;
 }
 
-nav::-webkit-input-placeholder {
+nav ::-webkit-input-placeholder {
     text-align: center;
 }
 
-nav::-moz-placeholder {
+nav ::-moz-placeholder {
     text-align: center;
 }
 
