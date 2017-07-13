@@ -1,0 +1,33 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+#slide-out {
+    margin-top: 64px;
+    box-shadow: none;
+    max-height: calc(100vh - 64px);
+}
+
+.side-nav a.gray {
+    color: #EEEEEE;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    box-shadow: none;
+}
+
+nav::-webkit-input-placeholder {
+    text-align: center;
+}
+
+nav::-moz-placeholder {
+    text-align: center;
+}
+
+#slide-out,
+nav {
+    background-color: #393E46;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <div class="input-field" data-activates="slide-out">
+            <input id="search" type="search" placeholder="Filter restaurants (click here)" data-bind='value:filter, valueUpdate: "input"'>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons" data-bind="click:resetFilter">close</i>
+        </div>
+    </div>
+</nav>
+<a href="#" data-activates="slide-out" class="hide" id="nav-click"><i class="material-icons">menu</i></a>
+<div class="row" style="margin: 0">
+    <div class="col s12" id="map" style="height: 100vh;"></div>
+</div>
+<ul id="slide-out" class="side-nav fixed" data-bind="foreach:filteredList">
+    <li><a class="grey-text" href="#" data-bind="text:name,click:openWindow"></a></li>
+</ul>
+<script src="scripts/knockout-3.4.2.debug.js"></script>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/materialize.min.js"></script>
+<script src="scripts/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgXKU65OceRdHLMTcvzPtLazEBiUqV_PM&libraries=places&callback=initMap" async defer></script>
+</body>
+
+</html>
