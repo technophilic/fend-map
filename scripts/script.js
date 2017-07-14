@@ -25,7 +25,7 @@ function getData() {
         },
         error: function(err) {
             console.log(err);
-            Materialize.toast('Unable to fetch the data ,Sorry for the inconvenience caused.', 4000); //Error handling
+            Materialize.toast('Unable to fetch the data ,Sorry for the inconvenience caused.'); //Error handling
         }
     });
 }
@@ -98,7 +98,7 @@ function Restaurant(t) {
             self.marker.setMap(null);
     });
     this.infowindow = new google.maps.InfoWindow({
-        content: '<div><h5 style="width: 200px;">' + self.name + '</h5><p><b>Cuisines :</b><span>' + self.cuisines + '</span></p><img src="' + self.thumb + '" alt=""><div><p style="width: 200px;">' + self.address + '</p><h4>' + self.rating + '<span style="font-size: medium">/5</span></h4><a href="' + self.website + '">More tasty information <i style="font-size: 13px;" class="material-icons">open_in_browser</i></a></div></div>'
+        content: '<div><h5 style="width: 200px;">' + self.name + '</h5><p><b>Cuisines :</b><span>' + self.cuisines + '</span></p><img src="' + self.thumb + '" alt=""><div><p style="width: 200px;">' + self.address + '</p><h4>' + self.rating + '<span style="font-size: medium">/5</span></h4><a href="' + self.website + '">More tasty information <i style="font-size: 13px;" class="material-icons">open_in_browser</i></a></div><small>Powered by Zomato <a href="https://developers.zomato.com/documentation#/">api</a></small></div>'
     });
     this.openWindow = function() {
         self.infowindow.open(map, self.marker);
@@ -148,3 +148,10 @@ $(function() {
             $navClick.sideNav('show');
     });
 });
+
+/**
+ * @description A function to handle errors from maps api.
+ */
+function onError() {
+    Materialize.toast('Unable to fetch the map ,Sorry for the inconvenience caused.'); //Error handling
+}
